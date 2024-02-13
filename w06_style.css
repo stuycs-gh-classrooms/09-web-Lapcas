@@ -1,0 +1,22 @@
+body {
+  background-color: green;
+  color: yellow;
+  font-size: 22px;
+  text-alight: center;
+}
+
+img {
+  border: 3px black;
+}
+
+ul {
+  background-color: rgb(0, 0, 255 / 50);
+}
+
+li {
+  border: 5px green;
+}
+
+heading {
+  font-size: 50px;
+}
