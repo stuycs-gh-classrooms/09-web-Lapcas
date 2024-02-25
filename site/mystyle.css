@@ -1,0 +1,12 @@
+.buttons {
+  display: flex;
+}
+
+.buttons > li {
+  flex: 1;
+  list-style-type: none;
+}
+
+.navlink {
+    text-decoration: none;
+}
