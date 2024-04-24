@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Fractals</title>
+    <link rel="stylesheet" href="fractals.css">
+  </head>
+
+  <body>
+    <h1>FRACTALS!</h1>
+    <h2>Koch Curve</h2>
+    <img src="nkoch.png" alt="Normal Koch Curve">
+    <h3>My modifications are:</h3>
+    <ul>
+    <li>Randomly adding a number between 5 and -5 to the angle I'm turning/turning back</li>
+    <li>Changing the color based on the angle that I'm turning</li>
+    </ul>
+    <img src="mkoch.png" alt="Modified Koch Curve">
+    <pre><code>
+  def new_koch(t,depth,length,angle):
+    t.pd()
+    if(depth==1):
+        t.fd(length)
+        if(angle>=60):
+            t.color('blue')
+        else:
+            t.color('red')
+    elif(depth>1):
+        angle+=(random.randrange(-3,3))
+        new_koch(t,depth-1,length,angle)
+        t.lt(angle)
+        new_koch(t,depth-1,length,angle)
+        t.rt(angle*2)
+        new_koch(t,depth-1,length,angle)
+        t.lt(angle)
+        new_koch(t,depth-1,length,angle)
+    </code></pre>
+    <h2>Sierpinski Triangle</h2>
+    <img src="nsierpinski.png" alt="Normal Sierpinski Triangle">
+    <h3>My modifications are:</h3>
+    <ul>
+    <li>Randomly adding a constant to the interior angle of each triangle</li>
+    <li>Making the color of each triangle a random one(Green or Red)</li>
+    </ul>
+    <img src="msierpinksi.png" alt="Modified Sierpinski Triangle">
+    <pre><code>
+  def new_koch(t,depth,length,angle):
+    t.pd()
+    if(depth==1):
+        t.fd(length)
+        if(angle>=60):
+            t.color('blue')
+        else:
+            t.color('red')
+    elif(depth>1):
+        angle+=(random.randrange(-3,3))
+        new_koch(t,depth-1,length,angle)
+        t.lt(angle)
+        new_koch(t,depth-1,length,angle)
+        t.rt(angle*2)
+        new_koch(t,depth-1,length,angle)
+        t.lt(angle)
+        new_koch(t,depth-1,length,angle)
+    </code></pre>
+    <h2>Tree</h2>
+    <img src="ntree.png" alt="Normal Tree">
+    <h3>My modifications are:</h3>
+    <ul>
+    <li>Randomly turning the tree by it's angle*1.7</li>
+    <li>Setting the ends to red or blue and setting all the other branches to green or orange</li>
+    </ul>
+    <img src="mtree.png" alt="Modified Tree">
+    <pre><code>
+  def new_tree(t, depth, size, angle):
+    if(random.randrange(2)==1):
+        angle*=1.8
+    if depth == 0:
+        if(random.randrange(2)==1):
+            t.color('red')
+        else:
+            t.color('blue')
+        t.fd(size)
+        t.bk(size)
+        if(random.randrange(2)==1):
+            t.color('green')
+        else:
+            t.color('orange')
+    else:
+        t.fd(size)
+        t.rt(angle)
+        new_tree(t, depth-1, size, angle)
+        t.lt(2 * angle)
+        new_tree(t, depth-1, size, angle)
+        t.rt(angle)
+        t.bk(size)
+    </code></pre>
+  </body>
+
+</html>
