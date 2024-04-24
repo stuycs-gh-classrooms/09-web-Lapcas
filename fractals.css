@@ -1,0 +1,13 @@
+body {
+  background-color: rgb(135, 206, 250);
+  font-family: sans-serif;
+}
+
+img {
+  border: 4mm ridge rgb(72, 209, 204);
+}
+
+
+code {
+  color: green;
+}
